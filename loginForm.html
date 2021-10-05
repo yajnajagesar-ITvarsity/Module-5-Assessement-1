@@ -1,0 +1,41 @@
+<html>
+<head>
+<link rel="stylrsheet" type="text/css" href="style.css">
+</head>
+<body>
+    <p>Welcome. Plase login.</p>
+
+<form>
+    <label for="UsernameIpnut">Username:</label><input type="text" id="usernameInput"/>
+    <br>
+    <label for="PasswordInput">Password:</label><input type="text" id="PasswordInput"/>
+    <p id="message"></p>
+    <br><br>
+    <a href="#" onclick="verifyUser"()>Login</a>
+</form>
+
+<script>
+    
+    function verifyUser () {
+        var username = doucumengt.getElemetById("usernameInput").value;
+        var password = doucumengt.getElemetById("PasswordInput").value;
+
+        checkUserCreds(username, password);
+
+    }
+
+    function checkUserCreds(username, password){
+        var systemUsername = "Bond";
+        var systemPassword = "007";
+        
+        if (username == systemUsername && password == systemPassword){
+            document.getElementById("message").innerHTML = "Correct.logging you in..."
+        }
+        else{
+            document.getElementById("message").innerHTML = "Username or Password are incorrect"
+        }
+    }
+
+</script>
+</body>
+</html>
