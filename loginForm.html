@@ -1,41 +1,36 @@
 <html>
 <head>
-<link rel="stylrsheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <p>Welcome. Please login.</p>
-
-<form>
-    <label for="UsernameIpnut">Username:</label><input type="text" id="usernameInput"/>
-    <br>
-    <label for="PasswordInput">Password:</label><input type="text" id="PasswordInput"/>
+    <p>Welcome. To Begin Please Log in.</p>
+<form >
+    <label for="usernameInput">Username: </label><input type="text" id="usernameInput"/>
+    <br><br>
+    <label for="passwordInput">Password: </label><input type="password" id="passwordInput"/>
     <p id="message"></p>
     <br><br>
-    <a href="#" onclick="verifyUser"()>Login</a>
+    <a href="#" onclick="verifyUser()" >Log in </a>
 </form>
-
 <script>
-    
-    function verifyUser () {
-        var username = doucumengt.getElemetById("usernameInput").value;
-        var password = doucumengt.getElemetById("PasswordInput").value;
+    function verifyUser(){
+        var username = document.getElementById("usernameInput").value;
+        var password = document.getElementById("passwordInput").value;
 
         checkUserCreds(username, password);
-
-    }
+}
 
     function checkUserCreds(username, password){
         var systemUsername = "Bond";
         var systemPassword = "007";
-        
-        if (username == systemUsername && password == systemPassword){
-            document.getElementById("message").innerHTML = "Correct.logging you in..."
-        }
-        else{
-            document.getElementById("message").innerHTML = "Username or Password are incorrect"
+
+        if(username == systemUsername && password == systemPassword){
+            document.getElementById("message").innerHTML = "Correct, logging in....."
+        } else {
+            document.getElementById("message").innerHTML = "Username or Password incorrect!";
         }
     }
-
 </script>
+
 </body>
 </html>
